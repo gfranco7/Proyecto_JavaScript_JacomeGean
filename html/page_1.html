@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Bookzemov</title>
+    <link rel="stylesheet" href="../css/style_1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <input type="checkbox"  id="check">
+        <label for="check" class="checkbtn"> 
+            <i class="fas fa-bars"></i>
+        </label>
+        <a href="#" class="enlace">
+            <img src="../multimedia/1.png" alt="" class="logo">
+        </a>
+        <ul>
+            <li><a class="active" href="#">Inicio</a></li>
+            <li><a href="#">Categorías</a></li>
+            <li><a href="#">Portafolio</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="main_title">
+            <h1 id="bookzemov">Bookzemov</h1>
+        </div>
+    </section>
+    <main>
+        <div class="ful-img" id="fulImgBox">
+            <img src="" id="fulImg" alt="">
+            <span onclick="closeImg()">X</span>
+        </div>
+    
+        <h1 id="title_gallery"><span>Books, Tv Series y Movies</span></h1>
+    
+        <div class="img-gallery">
+            <div class="img-container">
+                <img src="../multimedia/gallery/assasin.jpg" onclick="openFulImg(this.src)" alt="">
+                <Button class="delete-btn">Remove</Button>
+            </div>
+            <div class="img-container">
+                <img src="../multimedia/gallery/bond.jpg" onclick="openFulImg(this.src)" alt="">
+                <Button class="delete-btn">Remove</Button>
+            </div>
+            <div class="img-container">
+                <img src="../multimedia/gallery/panther.webp" onclick="openFulImg(this.src)" alt="">
+                <Button class="delete-btn">Remove</Button>
+            </div>
+            <div class="img-container">
+                <img src="../multimedia/gallery/rey.jpg" onclick="openFulImg(this.src)" alt="">
+                <Button class="delete-btn">Remove</Button>
+            </div>
+            <div class="img-container">
+                <img src="../multimedia/gallery/player.jpg" onclick="openFulImg(this.src)" alt="">
+                <Button class="delete-btn">Remove</Button>
+            </div>
+            <div class="img-container">
+                <img src="../multimedia/gallery/señor.jpg" onclick="openFulImg(this.src)" alt="">
+                <Button class="delete-btn">Remove</Button>
+            </div>
+            <div class="img-container">
+                <img src="../multimedia/gallery/laland.webp" onclick="openFulImg(this.src)" alt="">
+                <Button class="delete-btn">Remove</Button>
+            </div>
+            <div class="img-container">
+                <img src="../multimedia/gallery/padre.jpg" onclick="openFulImg(this.src)" alt="">
+                <Button class="delete-btn">Remove</Button>
+            </div>
+            
+        </div>
+    </main>
+    <script src="../Js/page_1.js"></script>
+</body>
+</html>

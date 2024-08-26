@@ -1,0 +1,194 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+nav{
+    background: #ffffff;
+    height: 80px;
+    width: 100%;
+}
+.enlace{
+    position: absolute;
+    padding: 20px 50px;
+    margin-top: -19px;
+}
+.logo{
+    width: 100px;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #000000;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+li a.active, li a:hover{
+    background: #9b42b6;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #9211c5;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+section{
+    background: url(../multimedia/fondo_1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: calc(100vh - 80px);
+    color: white;
+    
+}
+
+.main_title{
+    padding-top: 8%;
+    padding-right: 5%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+}
+#bookzemov{
+    font-size:7vw;
+    font-style: oblique;
+}
+main{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#title_gallery{
+    text-align: center;
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+    color: #350349;
+}
+#title_gallery::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    top: 50%;
+    z-index: -1;
+}
+#title_gallery span{
+    background-color:#ecf4fb;
+    padding: 0 15px;
+}
+.img-gallery{
+    width: 80%;
+    margin: 50px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 30px;
+}
+.img-gallery img{
+    width: 100%;
+    cursor: pointer;
+    transition: 1s;
+}
+.img-gallery img:hover{
+    transform: scale(1.2);
+    
+}
+.ful-img{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0,0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+.ful-img span{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+.ful-img img{
+    width: 90%;
+    max-width: 600px;
+}
+.delete-btn{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: medium;
+    color: #aa0c0c;
+    width: 35%;
+    height: 15%;
+    border-radius: 8px;
+    border:#ffffff;
+    background-color: rgb(255, 255, 255);
+}
+.delete-btn:hover{
+    background: #d10909;
+    color: #000000;
+}   
+
+@media (max-width: 952px){
+    .enlace{
+        padding-left: 20px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    li a:hover, li a.active{
+        background: none;
+        color: red;
+    }
+    #check:checked ~ ul{
+        left:0;
+    }
+}
