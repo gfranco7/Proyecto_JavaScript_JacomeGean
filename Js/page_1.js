@@ -1,9 +1,20 @@
+async function cargarData(){
+    let data = await fetch("https://66c8fd778a477f50dc2fc022.mockapi.io/bookzemov_data")
+    let infoData = await data.json()
+    console.log(infoData)    
+}
+cargarData()
+
+
+
+
+
 const fulImgBox = document.getElementById("fulImgBox"),
 fulImg = document.getElementById("fulImg");
 
 function openFulImg(reference){
     fulImgBox.style.display = "flex";
-    fulImg.src = reference
+    fulImg.style.backgroundImage = `url(${reference})`
 }
 function closeImg(){
     fulImgBox.style.display = "none";

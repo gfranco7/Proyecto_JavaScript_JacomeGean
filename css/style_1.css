@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 nav{
-    background: #ffffff;
+    background: #000000;
     height: 80px;
     width: 100%;
 }
@@ -28,7 +28,7 @@ nav ul li{
     margin: 0 5px;
 }
 nav ul li a{
-    color: #000000;
+    color: #ffffff;
     font-size: 18px;
     padding: 7px 13px;
     border-radius: 3px;
@@ -113,6 +113,18 @@ main{
 .img-gallery img:hover{
     transform: scale(1.2);
     
+}
+
+#fulImg{
+    background-image: url("");
+    width: 80%;
+    height: 80%;
+}
+
+#sombraImg{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.404);
 }
 .ful-img{
     width: 100%;
