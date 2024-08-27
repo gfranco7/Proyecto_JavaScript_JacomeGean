@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index Bookzemov</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style_1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -17,12 +18,13 @@
             <img src="../multimedia/1.png" alt="" class="logo">
         </a>
         <ul>
+            <li><button id="buttonAddForm">+</button></li>
             <li><a class="active" href="#">Inicio</a></li>
             <li><a href="#">Format</a></li>
             <li><a href="#">Platform</a></li>
             <li><a href="#">Status</a></li>
             <li><a href="#">Genre</a></li>
-            <li><a href="#">Rating</a></li>
+            <li><a href="#">Rating</a></li> 
 
         </ul>
     </nav>
@@ -31,12 +33,92 @@
             <h1 id="bookzemov">Bookzemov</h1>
         </div>
     </section>
+    <div id="fondoOscuro" style="display: none;">
+        <div id="contenedorForm">
+            <form>
+                <input id="form-name" type="text" placeholder="Name">
+                <div>
+                    <p id="formGeneros" listgen="">Generos</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Action" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Action
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Horror" id="horrorForm">
+                        <label class="form-check-label" for="horrorForm">
+                        Horror
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Sci-Fi" id="sciFiform">
+                        <label class="form-check-label" for="sciFiform">
+                        Sci-Fi
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Romance" id="romanceForm">
+                        <label class="form-check-label" for="romanceForm">
+                        Romance
+                        </label>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button id="estado" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Format
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a cont="estado" class="dropdown-item" href="#">Movies</a></li>
+                      <li><a cont="estado" class="dropdown-item" href="#">Tv Series</a></li>
+                      <li><a cont="estado" class="dropdown-item" href="#">Books</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown">
+                    <button id="platform" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Platform
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a cont="platform" class="dropdown-item" href="#">Netflix</a></li>
+                      <li><a cont="platform" class="dropdown-item" href="#">HBO</a></li>
+                      <li><a cont="platform" class="dropdown-item" href="#">Prime Video</a></li> 
+                      <li><a cont="platform" class="dropdown-item" href="#">Apple Books</a></li>
+                      <li><a cont="platform" class="dropdown-item" href="#">Wattpad</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown">
+                    <button id="status" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Status
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a cont="status" class="dropdown-item" href="#">Paused</a></li>
+                      <li><a cont="status" class="dropdown-item" href="#">Finished</a></li>
+                      <li><a cont="status" class="dropdown-item" href="#">Still producing</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown">
+                    <button id="rating" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Rating
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a cont="rating" class="dropdown-item" href="#">5</a></li>
+                      <li><a cont="rating" class="dropdown-item" href="#">4</a></li>
+                      <li><a cont="rating" class="dropdown-item" href="#">3</a></li>
+                      <li><a cont="rating" class="dropdown-item" href="#">2</a></li>
+                      <li><a cont="rating" class="dropdown-item" href="#">1</a></li>
+                    </ul>
+                  </div>
+                <input id="new_date" type="text" placeholder="Fecha de Estreno">
+                <input id="new_review" type="text" placeholder="Reseña">
+                <input id="new_img" type="text" placeholder="(res 800 x 1080)">
+                <button id="subirDatos"> Subir</button>
+            </form>
+        </div>
+    </div>
     <main>
         <div class="ful-img" id="fulImgBox">
             <div id="fulImg">
-                <div id="sombraImg">
-                    
-                </div>
+                
             </div>
             <span onclick="closeImg()">X</span>
         </div>
@@ -44,41 +126,13 @@
         <h1 id="title_gallery"><span>Books, Tv Series y Movies</span></h1>
     
         <div class="img-gallery">
-            <div class="img-container">
-                <img src="../multimedia/gallery/assasin.jpg" onclick="openFulImg(this.src)" alt="">
-                <Button class="delete-btn">Remove</Button>
-            </div>
-            <div class="img-container">
-                <img src="../multimedia/gallery/bond.jpg" onclick="openFulImg(this.src)" alt="">
-                <Button class="delete-btn">Remove</Button>
-            </div>
-            <div class="img-container">
-                <img src="../multimedia/gallery/panther.webp" onclick="openFulImg(this.src)" alt="">
-                <Button class="delete-btn">Remove</Button>
-            </div>
-            <div class="img-container">
-                <img src="../multimedia/gallery/rey.jpg" onclick="openFulImg(this.src)" alt="">
-                <Button class="delete-btn">Remove</Button>
-            </div>
-            <div class="img-container">
-                <img src="../multimedia/gallery/player.jpg" onclick="openFulImg(this.src)" alt="">
-                <Button class="delete-btn">Remove</Button>
-            </div>
-            <div class="img-container">
-                <img src="../multimedia/gallery/señor.jpg" onclick="openFulImg(this.src)" alt="">
-                <Button class="delete-btn">Remove</Button>
-            </div>
-            <div class="img-container">
-                <img src="../multimedia/gallery/laland.webp" onclick="openFulImg(this.src)" alt="">
-                <Button class="delete-btn">Remove</Button>
-            </div>
-            <div class="img-container">
-                <img src="../multimedia/gallery/padre.jpg" onclick="openFulImg(this.src)" alt="">
-                <Button class="delete-btn">Remove</Button>
-            </div>
+            
+            
             
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../Js/page_1.js"></script>
 </body>
+
 </html>

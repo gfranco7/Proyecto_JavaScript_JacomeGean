@@ -119,12 +119,14 @@ main{
     background-image: url("");
     width: 80%;
     height: 80%;
+    color: white
+    ;
 }
 
 #sombraImg{
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.404);
+    background-color: rgba(0, 0, 0, 0.692);
 }
 .ful-img{
     width: 100%;
@@ -163,7 +165,26 @@ main{
 .delete-btn:hover{
     background: #d10909;
     color: #000000;
-}   
+}
+
+#fondoOscuro{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.74);
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#contenedorForm{
+    width: 80%;
+    height: 90%;
+    position: relative;
+    background-color: white;
+}
 
 @media (max-width: 952px){
     .enlace{
@@ -204,3 +225,4 @@ main{
         left:0;
     }
 }
+
