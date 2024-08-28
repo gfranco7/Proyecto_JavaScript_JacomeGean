@@ -176,6 +176,7 @@ main{
 }
 
 #fondoOscuro{
+    display: flex;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.74);
@@ -191,8 +192,39 @@ main{
     width: 80%;
     height: 90%;
     position: relative;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.658);
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
 }
+#form-name{
+    margin-left: 2vw;
+    margin-top: 1vw;
+    width: 20%;
+}
+#formGeneros{
+    margin:2vw;
+}
+
+.form-check{
+    margin-left: 2vw;
+}
+
+.dropdown{
+    margin-left: 2vw;
+    padding-bottom: 1vw;
+}
+
+#new_date, #new_review, #new_img, #subirDatos{
+    margin-left: 2vw    ;
+}
+
+#subirDatos{
+    margin-top: 1vw;
+    color: white;
+    background-color: #350349;
+}
+
 
 @media (max-width: 952px){
     .enlace{

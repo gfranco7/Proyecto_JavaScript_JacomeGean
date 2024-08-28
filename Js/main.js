@@ -54,7 +54,7 @@ let btnSubirForm = document.getElementById("subirDatos").addEventListener("click
     }
     console.log(SubirObjeto);
 
-    await fetch("https://66c8fd778a477f50dc2fc022.mockapi.io/bookzemov_data", {
+    await fetch(`https://66c8fd778a477f50dc2fc022.mockapi.io/bookzemov_data`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(SubirObjeto)
@@ -89,35 +89,59 @@ async function openFulImg(reference, id) {
     fulImg.style.backgroundImage = `url(${reference})`
 
     let sombraImg = document.createElement('div')
-    sombraImg.id='sombraImg'
+    sombraImg.id = 'sombraImg'
 
     fulImg.appendChild(sombraImg)
     sombraImg.innerHTML = `
-            <h2>${infoData.name}</h2>
-            <p><strong>Genrer: </strong>${infoData.genres}</p>
-            <p><strong>Format: </strong>${infoData.type}</p>
-            <p><strong>Platform: </strong>${infoData.platform}</p>
-            <p><strong>Status: </strong>${infoData.status}</p>
-            <p><strong>Rating: </strong>${infoData.rating} Stars</p>
-            <p><strong>Review: </strong>${infoData.review}</p>
+            <h2 class="intoTitle">${infoData.name}</h2>
+            <p class="intoImg"><strong>Genrer: </strong>${infoData.genres}</p>
+            <p class="intoImg"><strong>Format: </strong>${infoData.type}</p>
+            <p class="intoImg"><strong>Platform: </strong>${infoData.platform}</p>
+            <p class="intoImg"><strong>Status: </strong>${infoData.status}</p>
+            <p class="intoImg"><strong>Rating: </strong>${infoData.rating} Stars</p>
+            <p class="intoImg"><strong>Review: </strong>${infoData.review}</p>
+            <style>
+                .intoTitle{
+                    padding: 1vw;
+                }
+                .intoImg{
+                    padding-top: 1vw;
+                    padding-left: 1vw
+                }
+                strong{
+                font-style: oblique;
+                }
+            </style>
         `
 
     let botonEditar = document.createElement("button")
     botonEditar.innerHTML = "Editar"
     botonEditar.id = `btn-edit${id}`
     fulImg.appendChild(botonEditar)
-    
-    botonEditar.addEventListener('click', async ()=>{   
-        if (botonEditar.innerHTML=="Guardar") {
+
+    botonEditar.addEventListener('click', async () => {
+        if (botonEditar.innerHTML == "Guardar") {
             let elementosInput = document.querySelectorAll(".inputEdit")
             sombraImg.innerHTML = `
-                <h2>${elementosInput[0].value}</h2>
-                <p><strong>Genrer: </strong>${elementosInput[1].value}</p>
-                <p><strong>Format: </strong>${elementosInput[2].value}</p>
-                <p><strong>Platform: </strong>${elementosInput[3].value}</p>
-                <p><strong>Status: </strong>${elementosInput[4].value}</p>
-                <p><strong>Rating: </strong>${elementosInput[5].value} Stars</p>
-                <p><strong>Review: </strong>${elementosInput[6].value}</p>
+                <h2 class="intoTitle">${elementosInput[0].value}</h2>
+                <p class="intoImg" ><strong>Genrer: </strong>${elementosInput[1].value}</p>
+                <p class="intoImg"><strong>Format: </strong>${elementosInput[2].value}</p>
+                <p class="intoImg"><strong>Platform: </strong>${elementosInput[3].value}</p>
+                <p class="intoImg"><strong>Status: </strong>${elementosInput[4].value}</p>
+                <p class="intoImg"><strong>Rating: </strong>${elementosInput[5].value} Stars</p>
+                <p class="intoImg"><strong>Review: </strong>${elementosInput[6].value}</p>
+                <style>
+                .intoTitle{
+                    padding: 1vw;
+                }
+                .intoImg{
+                    padding-top: 1vw;
+                    padding-left: 1vw
+                }
+                strong{
+                font-style: oblique;
+                }
+            </style>
             `
             let objetoAgregar = {
                 "name": elementosInput[0].value,
@@ -130,23 +154,35 @@ async function openFulImg(reference, id) {
                 "rating": elementosInput[5].value,
                 "img": reference
             }
-            botonEditar.innerHTML="Editar"
+            botonEditar.innerHTML = "Editar"
             await fetch(`https://66c8fd778a477f50dc2fc022.mockapi.io/bookzemov_data/${id}/`, {
                 method: "PUT",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(objetoAgregar)
             })
-        }else{
+        } else {
             sombraImg.innerHTML = `
-                <input class="inputEdit" value="${infoData.name}"></input>
-                <p><strong>Genrer: </strong><input class="inputEdit" value="${infoData.genres}"></input></p>
-                <p><strong>Format: </strong><input class="inputEdit" value="${infoData.type}"></input></p>
-                <p><strong>Platform: </strong><input class="inputEdit" value="${infoData.platform}"></input></p>
-                <p><strong>Status: </strong><input class="inputEdit" value="${infoData.status}"></input></p>
-                <p><strong>Rating: </strong><input class="inputEdit" value="${infoData.rating}"></input></p>
-                <p><strong>Review: </strong><input class="inputEdit" value="${infoData.review}"></input></p>
-            `
-            botonEditar.innerHTML="Guardar"
+                <input class="inputEdit intoTitle" value="${infoData.name}"></input>
+                <p class="intoImg"><strong>Genrer: </strong><input class="inputEdit" value="${infoData.genres}"></input></p>
+                <p class="intoImg"><strong>Format: </strong><input class="inputEdit" value="${infoData.type}"></input></p>
+                <p class="intoImg"><strong>Platform: </strong><input class="inputEdit" value="${infoData.platform}"></input></p>
+                <p class="intoImg"><strong>Status: </strong><input class="inputEdit" value="${infoData.status}"></input></p>
+                <p class="intoImg"><strong>Rating: </strong><input class="inputEdit" value="${infoData.rating}"></input></p>
+                <p class="intoImg"><strong>Review: </strong><input class="inputEdit" value="${infoData.review}"></input></p>
+                <style>
+                    .intoTitle{
+                        padding: 1vw;
+                    }
+                    .intoImg{
+                        padding-top: 1vw;
+                        padding-left: 1vw
+                    }
+                    strong{
+                    font-style: oblique;
+                    }
+                </style>
+                `
+            botonEditar.innerHTML = "Guardar"
         }
     })
 
@@ -179,13 +215,13 @@ const createImages = async function () {
             let id = button.getAttribute('value');
             const imageContainer = this.parentElement;
             console.log(id);
-            
+
             imageContainer.remove();
             await fetch(`https://66c8fd778a477f50dc2fc022.mockapi.io/bookzemov_data/${id}/`, {
                 method: "DELETE"
             })
         });
-        
+
     });
 }
 
@@ -194,29 +230,29 @@ createImages()
 
 const btnFortmato = document.getElementById("btn_formato")
 
-btnFortmato.addEventListener("click", async () =>{
+btnFortmato.addEventListener("click", async () => {
     let containerImagenes = document.querySelector(".img-gallery")
     containerImagenes.innerHTML = ""
 
     let containerLibros = document.createElement("div")
     containerLibros.classList.add("libro-container")
-    
+
     containerLibros.style.color = "#350349"
     containerLibros.innerHTML = "<h2><center>Books</center></h2>"
 
     let containerPeliculas = document.createElement("div")
     containerPeliculas.classList.add("peliculas-container")
-    
+
     containerPeliculas.style.color = "#350349"
     containerPeliculas.innerHTML = "<h2><center>Movies</center></h2>"
 
     let containerSeries = document.createElement("div")
     containerSeries.classList.add("series-container")
-   
+
     containerSeries.style.color = "#350349"
     containerSeries.innerHTML = "<h2><center>Series</center></h2>"
-    
-    
+
+
     let datosMockapi = await cargarData()
     for (const recurso of datosMockapi) {
         let contenedorImg = `
@@ -230,17 +266,17 @@ btnFortmato.addEventListener("click", async () =>{
             containerPeliculas.innerHTML += contenedorImg
         } else if (recurso.type === "Books") {
             containerLibros.innerHTML += contenedorImg
-        } else{
+        } else {
             containerSeries.innerHTML += contenedorImg
         }
 
         console.log(containerPeliculas);
-        
+
     }
 
-    containerImagenes.appendChild(containerPeliculas)    
-    containerImagenes.appendChild(containerLibros)    
-    containerImagenes.appendChild(containerSeries)    
+    containerImagenes.appendChild(containerPeliculas)
+    containerImagenes.appendChild(containerLibros)
+    containerImagenes.appendChild(containerSeries)
 
     const deleteButtons = document.querySelectorAll('.delete-btn');
 
@@ -249,19 +285,19 @@ btnFortmato.addEventListener("click", async () =>{
             let id = button.getAttribute('value');
             const imageContainer = this.parentElement;
             console.log(id);
-            
+
             imageContainer.remove();
             await fetch(`https://66c8fd778a477f50dc2fc022.mockapi.io/bookzemov_data/${id}/`, {
                 method: "DELETE"
             })
         });
-        
+
     });
 })
 
 const btnPlatform = document.getElementById("btn_platform")
 
-btnPlatform.addEventListener("click", async () =>{
+btnPlatform.addEventListener("click", async () => {
     let containerImagenes = document.querySelector(".img-gallery")
     containerImagenes.innerHTML = ""
 
@@ -289,8 +325,8 @@ btnPlatform.addEventListener("click", async () =>{
     containerWattpad.classList.add("wattpad-container")
     containerWattpad.style.color = "#350349"
     containerWattpad.innerHTML = "<h2><center>Wattpad</center></h2>"
-    
-    
+
+
     let datosMockapi = await cargarData()
     for (const recurso of datosMockapi) {
         let contenedorImg = `
@@ -304,21 +340,21 @@ btnPlatform.addEventListener("click", async () =>{
             containerNetflix.innerHTML += contenedorImg
         } else if (recurso.platform === "Prime Video") {
             containerPrime.innerHTML += contenedorImg
-        } else if(recurso.platform === "HBO"){
+        } else if (recurso.platform === "HBO") {
             containerHBO.innerHTML += contenedorImg
-        } else if (recurso.platform === "Apple Books"){
+        } else if (recurso.platform === "Apple Books") {
             containerApple.innerHTML += contenedorImg
-        } else{
+        } else {
             containerWattpad.innerHTML += contenedorImg
         }
-        
+
     }
 
-    containerImagenes.appendChild(containerNetflix)    
-    containerImagenes.appendChild(containerPrime)    
-    containerImagenes.appendChild(containerHBO)  
+    containerImagenes.appendChild(containerNetflix)
+    containerImagenes.appendChild(containerPrime)
+    containerImagenes.appendChild(containerHBO)
     containerImagenes.appendChild(containerApple)
-    containerImagenes.appendChild(containerWattpad)  
+    containerImagenes.appendChild(containerWattpad)
 
     const deleteButtons = document.querySelectorAll('.delete-btn');
 
@@ -327,20 +363,20 @@ btnPlatform.addEventListener("click", async () =>{
             let id = button.getAttribute('value');
             const imageContainer = this.parentElement;
             console.log(id);
-            
+
             imageContainer.remove();
             await fetch(`https://66c8fd778a477f50dc2fc022.mockapi.io/bookzemov_data/${id}/`, {
                 method: "DELETE"
             })
         });
-        
+
     });
 })
 
 
 const btnStatus = document.getElementById("btn_status")
 
-btnStatus .addEventListener("click", async () =>{
+btnStatus.addEventListener("click", async () => {
     let containerImagenes = document.querySelector(".img-gallery")
     containerImagenes.innerHTML = ""
 
@@ -355,11 +391,11 @@ btnStatus .addEventListener("click", async () =>{
     containerFinished.innerHTML = "<h2><center>Finished</center></h2>"
 
     let containerProducing = document.createElement("div")
-    containerProducing.classList.add("producing-container") 
+    containerProducing.classList.add("producing-container")
     containerProducing.style.color = "#350349"
     containerProducing.innerHTML = "<h2><center>Still Producing</center></h2>"
-    
-    
+
+
     let datosMockapi = await cargarData()
     for (const recurso of datosMockapi) {
         let contenedorImg = `
@@ -373,15 +409,15 @@ btnStatus .addEventListener("click", async () =>{
             containerPaused.innerHTML += contenedorImg
         } else if (recurso.status === "Finished") {
             containerFinished.innerHTML += contenedorImg
-        } else{
+        } else {
             containerProducing.innerHTML += contenedorImg
         }
-        
+
     }
 
-    containerImagenes.appendChild(containerPaused)    
-    containerImagenes.appendChild(containerFinished)    
-    containerImagenes.appendChild(containerProducing)    
+    containerImagenes.appendChild(containerPaused)
+    containerImagenes.appendChild(containerFinished)
+    containerImagenes.appendChild(containerProducing)
 
     const deleteButtons = document.querySelectorAll('.delete-btn');
 
@@ -390,13 +426,13 @@ btnStatus .addEventListener("click", async () =>{
             let id = button.getAttribute('value');
             const imageContainer = this.parentElement;
             console.log(id);
-            
+
             imageContainer.remove();
             await fetch(`https://66c8fd778a477f50dc2fc022.mockapi.io/bookzemov_data/${id}/`, {
                 method: "DELETE"
             })
         });
-        
+
     });
 })
 
@@ -404,7 +440,7 @@ btnStatus .addEventListener("click", async () =>{
 
 const btnRating = document.getElementById("btn_rating")
 
-btnRating .addEventListener("click", async () =>{
+btnRating.addEventListener("click", async () => {
     let containerImagenes = document.querySelector(".img-gallery")
     containerImagenes.innerHTML = ""
 
@@ -418,8 +454,8 @@ btnRating .addEventListener("click", async () =>{
     container3stars.style.color = "#350349"
     container3stars.innerHTML = "<h2><center>Less than 4 Stars</center></h2>"
 
-    
-    
+
+
     let datosMockapi = await cargarData()
     for (const recurso of datosMockapi) {
         let contenedorImg = `
@@ -431,15 +467,15 @@ btnRating .addEventListener("click", async () =>{
 
         if (recurso.rating >= "4") {
             container4stars.innerHTML += contenedorImg
-        } else{
+        } else {
             container3stars.innerHTML += contenedorImg
         }
-        
+
     }
 
-    containerImagenes.appendChild(container4stars)    
-    containerImagenes.appendChild(container3stars)    
-       
+    containerImagenes.appendChild(container4stars)
+    containerImagenes.appendChild(container3stars)
+
 
     const deleteButtons = document.querySelectorAll('.delete-btn');
 
@@ -448,12 +484,12 @@ btnRating .addEventListener("click", async () =>{
             let id = button.getAttribute('value');
             const imageContainer = this.parentElement;
             console.log(id);
-            
+
             imageContainer.remove();
             await fetch(`https://66c8fd778a477f50dc2fc022.mockapi.io/bookzemov_data/${id}/`, {
                 method: "DELETE"
             })
         });
-        
+
     });
 })
