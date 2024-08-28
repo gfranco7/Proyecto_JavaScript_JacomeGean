@@ -55,7 +55,7 @@ code.
 ### 3. Ejecutar el Proyecto
 Simplemente abre el archivo index.html en tu navegador favorito.
 
-### 4. Interacción con la Galería
+### 4. Interacción con la Página
 - Agregar un registro: Completa el formulario con la información de la serie, película o libro y haz clic en "Agregar".
 - Modificar un registro: Haz clic en el botón de editar junto al registro que deseas modificar, realiza los cambios necesarios y guarda.
 - Eliminar un registro: Haz clic en el botón de eliminar junto al registro que deseas borrar.
