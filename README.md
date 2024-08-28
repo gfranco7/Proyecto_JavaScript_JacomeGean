@@ -13,7 +13,7 @@ La aplicación está desarrollada en JavaScript puro, con HTML y CSS para la int
 - **Eliminar registros:** Los usuarios pueden eliminar registros de su lista de seguimiento.
 - **Interfaz amigable:** La interfaz está diseñada para ser intuitiva y fácil de usar.
 
-## **Tecnologías utilizadas**
+##  🔨 **Tecnologías utilizadas**
 
 - **JavaScript:** Lógica de la aplicación.
 - **HTML:** Estructura de la página web.
@@ -61,7 +61,7 @@ Simplemente abre el archivo index.html en tu navegador favorito.
 - Eliminar un registro: Haz clic en el botón de eliminar junto al registro que deseas borrar.
 
 ### 🖼️Capturas de Pantalla
-![image](https://github.com/user-attachments/assets/93987b8c-50b5-4374-a111-16a72f81de5d)
+
 ![image](https://github.com/user-attachments/assets/15a44893-1c02-4f9a-a1a3-4cb5d35e3592)
 
 
