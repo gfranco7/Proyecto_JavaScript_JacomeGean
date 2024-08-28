@@ -38,6 +38,8 @@ nav ul li a{
     color: white;
     background-color: black;
     font-size: 100%;
+    text-decoration: none;
+    border-color: #000000;
 }
 li a.active, li a:hover{
     background: #9b42b6;
@@ -83,6 +85,7 @@ main{
     box-sizing: border-box;
 }
 #title_gallery{
+    
     text-align: center;
     position: relative;
     width: 80%;
@@ -100,7 +103,7 @@ main{
     z-index: -1;
 }
 #title_gallery span{
-    background-color:#ecf4fb;
+    background-color:#ffffff;
     padding: 0 15px;
 }
 .img-gallery{
@@ -158,18 +161,18 @@ main{
     max-width: 600px;
 }
 .delete-btn{
+    
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: medium;
-    color: #aa0c0c;
+    color: #702e8f;
     width: 35%;
-    height: 15%;
-    border-radius: 8px;
-    border:#ffffff;
-    background-color: rgb(255, 255, 255);
+    height: 7%;
+    border:#993cb6;
+    background-color: rgba(168, 22, 235, 0);
 }
 .delete-btn:hover{
-    background: #d10909;
-    color: #000000;
+    background: #020202;
+    color: #ffffff;
 }
 
 #fondoOscuro{
