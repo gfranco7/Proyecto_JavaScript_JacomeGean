@@ -34,6 +34,11 @@ nav ul li a{
     border-radius: 3px;
     text-transform: uppercase;
 }
+#buttonAddForm{
+    color: white;
+    background-color: black;
+    font-size: 100%;
+}
 li a.active, li a:hover{
     background: #9b42b6;
     transition: .5s;

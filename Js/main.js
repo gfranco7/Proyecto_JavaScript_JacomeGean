@@ -11,26 +11,26 @@ let listaGeneros = []
 btnAddForm.addEventListener("click", () => {
     let generosDisponibles = document.querySelectorAll(".form-check-input")
     for (const genero of generosDisponibles) {
-        genero.addEventListener("click",()=>{
+        genero.addEventListener("click", () => {
             let nombreGenero = genero.getAttribute("value")
-            
+
             if (!listaGeneros.includes(nombreGenero)) {
                 listaGeneros.push(nombreGenero)
-            }else{
+            } else {
                 let posicion = listaGeneros.indexOf(nombreGenero)
-                listaGeneros.splice(posicion,1)
+                listaGeneros.splice(posicion, 1)
             }
             let texto = listaGeneros.join(", ")
             console.log(listaGeneros);
-            document.getElementById("formGeneros").setAttribute("listgen",texto)
-            
+            document.getElementById("formGeneros").setAttribute("listgen", texto)
+
         })
     }
     document.getElementById("fondoOscuro").style.display = "flex"
 })
 
 let btnSubirForm = document.getElementById("subirDatos").addEventListener("click", async () => {
-    
+
     let name = document.getElementById("form-name").value
     let listGeneros = document.getElementById("formGeneros").getAttribute("listgen")
     let formato = document.getElementById("estado").innerText
@@ -42,24 +42,24 @@ let btnSubirForm = document.getElementById("subirDatos").addEventListener("click
     let img = document.getElementById("new_img").value
 
     let objetoAgregar = {
-    "name": name,
-    "genres": listGeneros,
-    "platform": plataforma,
-    "date": date,
-    "status": estado,
-    "review": review,
-    "type": formato,
-    "rating": rating,
-    "img": img
-  }
-  console.log(objetoAgregar);
-  
-    await fetch("https://66c8fd778a477f50dc2fc022.mockapi.io/bookzemov_data",{
-        method:"POST",
-        headers:{"content-type": "application/json"},
-        body:JSON.stringify(objetoAgregar)
+        "name": name,
+        "genres": listGeneros,
+        "platform": plataforma,
+        "date": date,
+        "status": estado,
+        "review": review,
+        "type": formato,
+        "rating": rating,
+        "img": img
+    }
+    console.log(objetoAgregar);
+
+    await fetch("https://66c8fd778a477f50dc2fc022.mockapi.io/bookzemov_data", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(objetoAgregar)
     })
-  
+
     document.getElementById("fondoOscuro").style.display = "none"
 
 })
@@ -101,18 +101,8 @@ function closeImg() {
     fulImgBox.style.display = "none";
 }
 
-const deleteButtons = document.querySelectorAll('.delete-btn');
 
-
-deleteButtons.forEach(button => {
-    button.addEventListener('click', function () {
-        
-        const imageContainer = this.parentElement;
-        imageContainer.remove();
-    });
-});
-
-const createImages = async function(){
+const createImages = async function () {
     let containerSources = document.querySelector(".img-gallery")
     let datosAPI = await cargarData()
 
@@ -126,6 +116,54 @@ const createImages = async function(){
 
         containerSources.innerHTML += contenedorImg
     }
+
+    const deleteButtons = document.querySelectorAll('.delete-btn');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', async function (id) {
+
+            const imageContainer = this.parentElement;
+            imageContainer.remove();
+            await fetch(`https://66c8fd778a477f50dc2fc022.mockapi.io/bookzemov_data/${id}/`, {
+                method: "DELETE",
+                headers: { "content-type": "application/json" }
+            })
+        });
+        
+    });
 }
 
 createImages()
+
+const deleteButtons = document.querySelectorAll('.delete-btn');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', async function (id) {
+
+            const imageContainer = this.parentElement;
+            imageContainer.remove();
+            await fetch(`https://66c8fd778a477f50dc2fc022.mockapi.io/bookzemov_data/${id}/`, {
+                method: "DELETE",
+                headers: { "content-type": "application/json" }
+            })
+        });
+        
+    });
+
+    // const PorFormato = btn-formato.addEventListener('click', async function () {
+        
+    //     let datosAPI = await cargarData()
+    
+    //     for (const element of datosAPI) {
+    //         let contenedorImg = `
+    //         <div class="img-container">
+    //             <img id="${element.id}" src="${element.img}" onclick="openFulImg(this.src, ${element.id})" alt="">   
+    //             <Button class="delete-btn">Remove</Button>
+    //         </div>
+    //         `
+    
+    //         containerSources.innerHTML += contenedorImg
+    //     }
+    //     PorFormato()
+    // })
+
