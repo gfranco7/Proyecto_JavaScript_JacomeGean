@@ -1,4 +1,5 @@
 *{
+    
     padding: 0;
     margin: 0;
     text-decoration: none;
@@ -6,7 +7,10 @@
     box-sizing: border-box;
 }
 nav{
-    background: #000000;
+    background: url(../eclipse-fantasia-morado-12336.webp) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
     height: 80px;
     width: 100%;
 }
@@ -16,7 +20,7 @@ nav{
     margin-top: -19px;
 }
 .logo{
-    width: 100px;
+    width: 77px;
 }
 nav ul{
     float: right;
@@ -33,6 +37,7 @@ nav ul li a{
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
+    text-decoration: none;
 }
 #buttonAddForm{
     color: white;
@@ -58,16 +63,17 @@ li a.active, li a:hover{
     display: none;
 }
 section{
-    background: url(../multimedia/fondo_1.jpg) no-repeat;
+    background: url(../portfolioFondo.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 100px);
     color: white;
     
 }
 
 .main_title{
-    padding-top: 8%;
+    color: #fffffffd;
+    padding-top: 13%;
     padding-right: 5%;
     display: flex;
     justify-content: flex-end;
@@ -78,12 +84,18 @@ section{
 #bookzemov{
     font-size:7vw;
     font-style: oblique;
+
 }
 main{
+    background: url(../eclipse-fantasia-morado-12336.webp) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: calc(100vh - 80px);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 #title_gallery{
     
     text-align: center;
